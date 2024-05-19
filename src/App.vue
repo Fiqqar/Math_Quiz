@@ -1,15 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div id="app">
+  <h1>Math Quiz</h1>
+  <OperatorQuiz @onBack="clearOperator" v-if="operator" :operator="operator"/>
+  <OperatorSelector v-if="!operator" @changeOperator="changeOperator"/>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import OperatorQuiz from "./components/OperatorQuiz.vue";
+import OperatorSelector from "./components/OperatorSelector.vue";
 
 export default {
   name: 'App',
+  data () {
+    return {
+      operator: null
+    };
+  },
   components: {
-    HelloWorld
+    OperatorSelector,
+    OperatorQuiz
+  },
+  methods: {
+    clearOperator () {
+      this.operator = null;
+    },
+    changeOperator (op) {
+      this.operator = op;
+    }
   }
 }
 </script>
