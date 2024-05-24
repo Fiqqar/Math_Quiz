@@ -41,4 +41,16 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+button {
+        padding: 20px;
+        margin-right: 20px;
+        margin-top: 10px;
+        width: 200px;
+        height: 80px;
+        background-color: #BFAF7E;
+        color: #401C14;
+        font-size: 15px;
+        cursor: pointer;
+        vertical-align: top;
+}
 </style>
